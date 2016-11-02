@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>npm-中文API</title>
+</head>
+<link rel="stylesheet" href="css/index.css">
+<body>
+<h1>Package.json 属性说明</h1>
+<ol>
+    <li>name - 包名。</li>
+    <li>description - 包的描述。</li>
+    <li>homepage - 包的官网 url 。</li>
+    <li>author - 包的作者姓名。</li>
+    <li>contributors - 包的其他贡献者姓名。</li>
+    <li>dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
+    <li>repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
+    <li>main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫 express，然后用户安装它，然后require("express")。</li>
+    <li>keywords - 关键字</li>
+</ol>
+<h1>npm</h1>
+<ul>
+    <li>
+        <div>npm init 创建模块</div>
+        <div> <img src="imgs/npm/init.png" alt="npm init 命令创建Package.json" > </div>
+    </li>
+    <li>
+        <div>npm install 安装模块</div>
+        <div class="eg">npm install 【Module Name】</div>
+    </li>
+    <li>
+        <div>npm uninstall 卸载模块</div>
+        <div class="eg">npm uninstall 【Module Name】</div>
+    </li>
+    <li>
+        <div>-g   # 全局安装</div>
+        <div class="eg">
+            npm install express          # 本地安装 <br />
+            npm install express -g   # 全局安装
+            </div>
+        <p>本地安装
+            1. 将安装包放在 ./node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。<br />
+            2. 可以通过 require() 来引入本地安装的包。
+        </p>
+        <p>全局安装
+            1. 将安装包放在 /usr/local 下或者你 node 的安装目录。<br />
+            2. 可以直接在命令行里使用。
+        </p>
+    </li>
+    <li><div>npm ls  查看安装的模块</div>
+    <div class="eg">npm ls -g</div>
+    </li>
+    <li><div>search   搜索模块</div>
+    <div class="eg">npm search express</div>
+    </li>
+</ul>
+<h2>REPL 命令</h2>
+<ol>
+    <li>ctrl + c - 退出当前终端。</li>
+    <li>ctrl + c 按下两次 - 退出 Node REPL。</li>
+    <li>ctrl + d - 退出 Node REPL.</li>
+    <li>向上/向下 键 - 查看输入的历史命令</li>
+    <li>tab 键 - 列出当前命令</li>
+    <li>.help - 列出使用命令</li>
+    <li>.break - 退出多行表达式</li>
+    <li>.clear - 退出多行表达式</li>
+    <li>.save filename - 保存当前的 Node REPL 会话到指定文件</li>
+    <li>.load filename - 载入当前 Node REPL 会话的文件内容。</li>
+</ol>
+</body>
+</html>

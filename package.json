@@ -1,0 +1,12 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "description": "测试模版",
+  "main": "helloword.js",
+  "scripts": {
+    "test": "console.log(\"hello\")",
+    "start": "node server.js"
+  },
+  "author": "jiangzicheng",
+  "license": "ISC"
+}
