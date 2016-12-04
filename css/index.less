@@ -1,4 +1,8 @@
-img{max-width: 100px;&:hover{max-width: none;}}
+img{max-width: 100px;
+  transition: 2s ease;
+  &:hover{max-width: none;
+  }
+}
 .eg{
   padding: 10px 15px;
   margin: 15px auto;
@@ -9,4 +13,273 @@ img{max-width: 100px;&:hover{max-width: none;}}
   border: 1px solid #ddd;
   border-left-width: 4px;
   background: #fbfbfb
+}
+code{
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 120%;
+  background-color: pink;
+  border-radius: 5px;
+  margin: auto 3px;
+}
+h3{
+  span{
+    font-size: 14px;
+    color: #841dc1;
+  }
+}
+
+.flexbox{
+  .box{
+    height: 200px;
+    background-color: aqua;
+    display: flex;
+    display: -webkit-flex;/*Safari */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    div{
+      text-align: center;
+      color: antiquewhite;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+
+
+.css3{
+  .exm{
+    display: flex;
+    flex-wrap: wrap;flex-direction: row;
+    height: 100px;align-items: center;border: 1px solid;
+    justify-content: space-around;
+    div{
+      width: 200px;height: 70px;
+      background-color: darksalmon;
+    }
+
+  }
+  .exm1{
+    border: 1px solid;
+    padding: 50px 20px;overflow: auto;
+    div{
+      width: 200px;height: 70px;
+    }
+
+  }
+.border-radius{
+  border:2px solid #50ffc7;
+  border-radius:8px;
+  -moz-border-radius:8px; /* Old Firefox */
+}
+  .box-shadow{
+    box-shadow: 10px 10px 5px #888888;
+  }
+  .border-image-round{
+    border:15px solid transparent;
+    border-image:url(../imgs/css3/border.png) 30 30 round;
+    -moz-border-image:url(../imgs/css3/border.png) 30 30 round; /* 老的 Firefox */
+    -webkit-border-image:url(../imgs/css3/border.png) 30 30 round; /* Safari 和 Chrome */
+    -o-border-image:url(../imgs/css3/border.png) 30 30 round; /* Opera */
+  }
+  .border-image-stretch{
+    border:15px solid transparent;
+    border-image:url(../imgs/css3/border.png) 30 30 stretch;
+    -moz-border-image:url(../imgs/css3/border.png) 30 30 stretch; /* 老的 Firefox */
+    -webkit-border-image:url(../imgs/css3/border.png) 30 30 stretch; /* Safari 和 Chrome */
+    -o-border-image:url(../imgs/css3/border.png) 30 30 stretch; /* Opera */
+  }
+.background{
+  background:url(../imgs/css3/bg_flower.gif);
+  background-repeat:no-repeat;padding:15px;
+}
+  .background-size{
+    -moz-background-size:63px 100px; /* 老版本的 Firefox */
+    background-size:63px 50px;
+  }
+  .content-box{
+    -moz-background-size:63px 100px; /* 老版本的 Firefox */
+    background-size:63px 50px;
+    background-position:right;
+    -webkit-background-origin:content-box; /* Safari */
+    background-origin:content-box;
+
+  }
+  .border-box{
+    -moz-background-size:63px 100px; /* 老版本的 Firefox */
+    background-size:63px 50px;
+    background-position:right;
+    -webkit-background-origin:border-box; /* Safari */
+    background-origin:border-box;
+
+  }
+  .text-shadow{
+    text-shadow: 5px 5px 5px #FF0000;
+  }
+  table{
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+    width: 100%;
+    th{
+      vertical-align: baseline;
+      padding: 5px 15px 5px 6px;
+      background-color: #d5d5d5;
+      border: 1px solid #aaa;
+      text-align: left;
+    }
+    td{
+      vertical-align: text-top;
+      padding: 6px 15px 6px 6px;
+      background-color: #efefef;
+      border: 1px solid #aaa;
+      ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+  }
+  .d2:hover{
+    transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+    -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+    -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Firefox */
+    -webkit-transform:matrix(0.5,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+    -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+    word-wrap: break-word;
+    -webkit-transform-origin: bottom left;
+}
+  .anim_box{
+    .anim_image {
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+      cursor:pointer;
+      position: absolute;
+    }
+    .anim_image_top {
+      -webkit-transform: scale(0, 0);
+      opacity: 0;
+      //filter: Alpha(opacity=0);
+    }
+    &:hover{
+      .anim_image_top {
+        opacity: 1;
+        //filter: Alpha(opacity=100);
+        -webkit-transform: scale(1,1);
+        -webkit-transform-origin: top right;
+      }
+      .anim_image_bottom {
+        opacity: 0;
+        -webkit-transform: scale(0, 0);
+        -webkit-transform-origin: bottom left;
+      }
+    }
+  }
+  #matrixBox {
+    width: 150px;
+    height: 150px;
+    line-height: 130px;
+    background-color: #a0b3d6;
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    transform-origin: top left;
+    background-color: #a0b3d6;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 1px 1px rgba(255, 255, 255, .75);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .matrix_image { margin-top: 30px; position: relative;
+    img {
+      vertical-align: bottom;
+
+      -webkit-transition:all 0.5s ease-in-out;
+      -moz-transition:all 0.5s ease-in-out;
+      -o-transition:all 0.5s ease-in-out;
+      -ms-transition:all 0.5s ease-in-out;
+      transition:all 0.5s ease-in-out;
+    }
+    .matrix_line {
+      width: 150px;
+      height: 2px;
+      background-color: #000;
+      background-color: rgba(0,0,0,.6);
+      position: absolute;
+      left: 128px;
+      top: 95px;
+      z-index: 1;
+      -moz-transform-origin: top left;
+      -webkit-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+    }
+    .matrix_line:before {
+      content: " ";
+      width: 4px;
+      height: 4px;
+      border: 1px solid #000;
+      border-radius: 4px;
+      background-color: #fff;
+      opacity: .75;
+      position:absolute;
+      left: -2px;
+      top:-2px;
+    }
+    .matrix_line:after {
+      content: " ";
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      border: 1px solid #000;
+      background-color: #34538b;
+      position:absolute;
+      right: -4px;
+      top:-4px;
+      cursor:move;
+    }
+  }
+  .animated_div{
+    color:#ffffff;
+    position:absolute;
+    font-weight:bold;
+    font:12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+    padding:20px 10px 0px 10px;
+    float:left;
+    margin:5px;
+    -webkit-transition:-webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s;
+    -webkit-border-radius:5px;
+    -o-transition-property:width,height,-o-transform,background,font-size,opacity;
+    -o-transition-duration:1s,1s,1s,1s,1s,1s;
+    -moz-transition-property:width,height,-o-transform,background,font-size,opacity;
+    -moz-transition-duration:1s,1s,1s,1s,1s,1s;
+    transition-property:width,height,transform,background,font-size,opacity;
+    transition-duration:1s,1s,1s,1s,1s,1s;
+    border-radius:5px;
+    opacity:0.4;
+    &:hover{
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+      opacity:1;
+      background:#1ec7e6;
+      width:90px;
+      height:60px;
+      font-size:16px;
+    }
+  }
+
+
 }

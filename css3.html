@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3中文API</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<h1>css3中文API</h1>
+<div>
+<p>CSS 用于控制网页的样式和布局。</p>
+    <p>CSS3 是最新的 CSS 标准。</p>
+    <strong>CSS3 模块</strong>
+    <p>CSS3 被划分为模块。</p>
+    <p>其中最重要的 CSS3 模块包括：</p>
+    <ul>
+        <li>选择器</li>
+        <li>框模型</li>
+        <li>背景和边框</li>
+        <li>文本效果</li>
+        <li>2D/3D 转换</li>
+        <li>动画</li>
+        <li>多列布局</li>
+        <li>用户界面</li>
+    </ul>
+</div>
+<div class="css3">
+<h1>CSS3 边框</h1>
+<p>通过 CSS3，您能够创建圆角边框，向矩形添加阴影，使用图片来绘制边框 - 并且不需使用设计软件，比如 PhotoShop。</p>
+<div>
+    <ol>
+        <li>border-radius <span>创建圆角</span></li>
+        <li>box-shadow <span>添加阴影</span></li>
+        <li>border-image <span>使用图片来创建边框</span></li>
+    </ol>
+</div>
+<div><img src="imgs/css3/1.jpg"/></div>
+<div class="exm">
+    <div class="border-radius">这个矩形有圆角哦！</div>
+    <div class="box-shadow">box-shadow 用于向方框添加阴影</div>
+    <div class="border-image-round">在这里，图片铺满整个边框。</div>
+    <div class="border-image-stretch">在这里，图片被拉伸以填充该区域。</div>
+</div>
+
+<h1>CSS3 背景</h1>
+<p>CSS3 包含多个新的背景属性，它们提供了对背景更强大的控制。</p>
+    <div>
+        <ol>
+            <li>background-size <span>规定背景图片的尺寸</span></li>
+            <li>background-origin <span>规定背景图片的定位区域</span></li>
+            <li>多重背景图片</li>
+        </ol>
+    </div>
+<div><img src="imgs/css3/2.jpg"/></div>
+    <p>您能够以像素或百分比规定尺寸。如果以百分比规定尺寸，那么尺寸相对于父元素的宽度和高度。</p>
+    <p>背景图片可以放置于 content-box、padding-box 或 border-box 区域。</p>
+    <div class="eg">body
+        {
+        background-image:url(bg_flower.gif),url(bg_flower_2.gif);
+        }</div>
+    <div class="exm">
+        <div class="background background-size">缩小的背景图片</div>
+        <div class="background content-box">content-box</div>
+        <div class="background border-box">border-box</div>
+    </div>
+    <h1>CSS3 文本效</h1>
+    <div>
+        <ul>
+            <li>text-shadow <span>向文本应用阴影</span></li>
+            <li>word-wrap <span>自动换行</span></li>
+        </ul>
+    </div>
+    <div class="eg">h1
+        {
+        text-shadow: 5px 5px 5px #FF0000;
+        }</div>
+    <div class="eg">p {word-wrap:break-word;}</div>
+    <div class="exm">
+        <div class="text-shadow">文本阴影效果！</div>
+    </div>
+    <h1>CSS3 字体</h1>
+    <p>当您您找到或购买到希望使用的字体时，可将该字体文件存放到 web 服务器上，它会在需要时被自动下载到用户的计算机上。</p>
+    <p>您“自己的”的字体是在 CSS3 @font-face 规则中定义的。</p>
+    <p>在新的 @font-face 规则中，您必须首先定义字体的名称（比如 myFirstFont），然后指向该字体文件。</p>
+    <div class="eg">
+        /*
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url('Sansation_Light.ttf'),
+            url('Sansation_Light.eot'); * IE9+ *
+        }
+        div
+        {
+            font-family:myFirstFont;
+        }*/</div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>描述符</th>
+                <th>值</th>
+                <th>描述</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+                <td>font-family</td>
+                <td>name</td>
+                <td>必需。规定字体的名称。</td>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td>URL</td>
+                <td>必需。定义字体文件的 URL。</td>
+            </tr>
+            <tr>
+                <td>font-stretch</td>
+                <td><ul>
+                    <li>normal</li>
+                    <li>condensed</li>
+                    <li>ultra-condensed</li>
+                    <li>extra-condensed</li>
+                    <li>semi-condensed</li>
+                    <li>expanded</li>
+                    <li>semi-expanded</li>
+                    <li>extra-expanded</li>
+                    <li>ultra-expanded</li>
+                </ul></td>
+                <td>可选。定义如何拉伸字体。默认是 "normal"。</td>
+            </tr>
+            <tr>
+                <td>font-style</td>
+                <td><ul>
+                    <li>ormal</li>
+                    <li>italic</li>
+                    <li>oblique</li>
+                </ul></td>
+                <td>可选。定义字体的样式。默认是 "normal"。</td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td><ul>
+                    <li>normal</li>
+                    <li>bold</li>
+                    <li>100</li>
+                    <li>200</li>
+                    <li>300</li>
+                    <li>400</li>
+                    <li>500</li>
+                    <li>600</li>
+                    <li>700</li>
+                    <li>800</li>
+                    <li>900</li>
+                </ul></td>
+                <td>可选。定义字体的粗细。默认是 "normal"。</td>
+            </tr>
+            <tr>
+                <td>unicode-range</td>
+                <td>unicode-range</td>
+                <td>可选。定义字体支持的 UNICODE 字符范围。默认是 "U+0-10FFFF"。</td>
+            </tr>
+            </tbody>
+        </table></div>
+    <h1>CSS3 2D 转换</h1>
+    <p>通过 CSS3 转换，我们能够对元素进行移动、缩放、转动、拉长或拉伸。</p>
+    <div>
+        <ol>
+            <li>translate() <span>元素从其当前位置移动，根据给定的 left（x 坐标） 和 top（y 坐标）</span></li>
+            <li>rotate() <span>元素顺时针旋转给定的角度</span></li>
+            <li>scale() <span>元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）</span></li>
+            <li>skew() <span>元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）</span></li>
+            <li>matrix() 把所有 2D 转换方法组合在一起</li>
+        </ol>
+    </div>
+    <div><img src="imgs/css3/4.jpg"/></div>
+    <div class="eg">div
+        {
+        transform: rotate(30deg);
+        -ms-transform: rotate(30deg);		/* IE 9 */
+        -webkit-transform: rotate(30deg);	/* Safari and Chrome */
+        -o-transform: rotate(30deg);		/* Opera */
+        -moz-transform: rotate(30deg);		/* Firefox */
+        }</div>
+    <div class="eg">div
+        {
+        transform: translate(50px,100px);
+        -ms-transform: translate(50px,100px);		/* IE 9 */
+        -webkit-transform: translate(50px,100px);	/* Safari and Chrome */
+        -o-transform: translate(50px,100px);		/* Opera */
+        -moz-transform: translate(50px,100px);		/* Firefox */
+        }</div>
+    <div class="eg">div
+        {
+        transform: rotate(30deg);
+        -ms-transform: rotate(30deg);		/* IE 9 */
+        -webkit-transform: rotate(30deg);	/* Safari and Chrome */
+        -o-transform: rotate(30deg);		/* Opera */
+        -moz-transform: rotate(30deg);		/* Firefox */
+        }</div>
+    <div class="eg">div
+        {
+        transform: scale(2,4);
+        -ms-transform: scale(2,4);	/* IE 9 */
+        -webkit-transform: scale(2,4);	/* Safari 和 Chrome */
+        -o-transform: scale(2,4);	/* Opera */
+        -moz-transform: scale(2,4);	/* Firefox */
+        }</div>
+    <div class="eg">div
+        {
+        transform: skew(30deg,20deg);
+        -ms-transform: skew(30deg,20deg);	/* IE 9 */
+        -webkit-transform: skew(30deg,20deg);	/* Safari and Chrome */
+        -o-transform: skew(30deg,20deg);	/* Opera */
+        -moz-transform: skew(30deg,20deg);	/* Firefox */
+        }</div>
+    <div class="eg">div
+        {
+        transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+        -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+        -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Firefox */
+        -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+        -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* Opera */
+        }</div>
+    <div class="exm" style="height: 200px;">
+        <div class="anim_box" style="height:200px;background-color: white;">
+            <img class="img anim_image anim_image_top" src="imgs/css3/5.jpg"/>
+            <img class="img anim_image anim_image_bottom" src="imgs/css3/6.jpg"/></div>
+    </div>
+    <div class="eg">matrix(s, 0, 0, s, 0, 0);
+        x' = ax+cy+e = s*x+0*y+0 = s*x;
+        y' = bx+dy+f = 0*x+s*y+0 = s*y;
+        也就是matrix(sx, 0, 0, sy, 0, 0);，等同于scale(sx, sy);</div>
+    <div class="eg">拉伸也用到了三角函数，不过是tanθ，而且，其至于b, c两个参数相关，书写如下（注意y轴倾斜角度在前）
+        matrix(1,tan(θy),tan(θx),1,0,0)
+        x' = x+y*tan(θx)+0 = x+y*tan(θx)
+        y' = x*tan(θy)+y+0 = x*tan(θy)+y
+        对应于skew(θx + "deg"，θy+ "deg")这种写法。</div>
+    <div class="eg">就旋转而言，rotate(θdeg)这种书写形式要比matrix简单多了，首先记忆简单，其次，无需计算。
+        例如，旋转30°，前者直接：
+        transform:rotate(30deg);
+        而使用matrix表示则还要计算cos, sin值：
+        transform: matrix(0.866025,0.500000,-0.500000,0.866025,0,0);</div>
+    <div class="eg">CSS3 transform的matrix()方法写法如下：
+        transform: matrix(a,b,c,d,e,f);</div>
+    <div><img src="imgs/css3/8.jpg"/></div>
+    <div class="exm1">
+        <p id="matrixDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+        <p>x轴比例(1-3)：<input type="range" id="matrixRangeX" value="1" min="1" max="3" step="0.1" autocomplete="off" /></p>
+        <p>y轴比例(1-3)：<input type="range" id="matrixRangeY" value="1" min="1" max="3" step="0.1" autocomplete="off" /></p>
+
+        <p id="skewDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+        <p>x轴倾斜角度(0-89)：<input type="range" id="matrixSkewX" value="0" min="0" max="89" autocomplete="off" /></p>
+        <p>y轴倾斜角度(0-89)：<input type="range" id="matrixSkewY" value="0" min="0" max="89" autocomplete="off" /></p>
+
+        <p id="rotateDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+        <p>请输入角度(0~360)：<input type="text" id="matrixRotate" value="0" min="0" max="360" autocomplete="off" /></p>
+        <div id="matrixBox" class="matrix_box">↑</div>
+        <div class="matrix_image">
+        <div id="matrixLine" class="matrix_line"></div>
+        <input type="text" id="matrixInput" class="matrix_input" autocomplete="off" placeholder="输入角度确定镜像对称轴" />
+        <img  id="matrixImage" src="imgs/css3/7.jpg" style="height: 191px;width: 256px;max-width:none"/></div></div>
+    <script>
+        var $ = function(selector) { return document.querySelector(selector); };
+        var $css3Transform = function(element, value) {
+            var arrPriex = ["O", "Ms", "Moz", "Webkit", ""], length = arrPriex.length;
+            for (var i=0; i < length; i+=1) {  element.style[arrPriex[i] + "Transform"] = value;  }
+        };
+        var eleRangeX = $("#matrixRangeX"), eleRangeY = $("#matrixRangeY"),
+            eleRangeX1 = $("#matrixSkewX"), eleRangeY1 = $("#matrixSkewY"),
+            eleRotate = $("#matrixRotate"),eleLine = $("#matrixLine"),
+            eleInput = $("#matrixInput"),
+            eleImage = $("#matrixImage"),
+            eleDetail = $("#matrixDetail"),
+            skewDetail = $("#skewDetail"),
+            rotateDetail = $("#rotateDetail"), eleBox = $("#matrixBox");
+
+        if (eleDetail && eleRangeX && eleRangeY && eleBox) {
+            var arrRange = [eleRangeX, eleRangeY];
+            for (var start=0; start<2; start+=1) {
+                arrRange[start].addEventListener("change", function() {
+                    var maxVal = this.getAttribute("max"), minVal = this.getAttribute("min"), value = this.value;
+                    if (value < minVal) {
+                        value = minVal;
+                        this.value = minVal;
+                    }
+                    if (value > maxVal) {
+                        value = maxVal;
+                        this.value = maxVal;
+                    }
+                    var valTransform = 'matrix('+ eleRangeX.value +',0,0,'+ eleRangeY.value +',0,0)'
+                    eleDetail.innerHTML = '目前属性值为：' + valTransform;
+                    $css3Transform(eleBox, valTransform);
+                });
+            }
+        }
+
+        if (skewDetail && eleRangeX1 && eleRangeY1 && eleBox) {
+            var arrRange = [eleRangeX1, eleRangeY1];
+            for (var start=0; start<2; start+=1) {
+                arrRange[start].addEventListener("change", function() {
+                    var maxVal = this.getAttribute("max"), minVal = this.getAttribute("min"), value = this.value;
+                    if (value - minVal < 0) {
+                        value = minVal;
+                        this.value = minVal;
+                    }
+                    if (value - maxVal > 0) {
+                        value = maxVal;
+                        this.value = maxVal;
+                    }
+                    var tanValY = Math.tan(eleRangeY1.value * Math.PI / 180), tanValX = Math.tan(eleRangeX1.value * Math.PI / 180);
+                    var valTransform = 'matrix(1,'+ tanValY.toFixed(6) +','+ tanValX.toFixed(6) +',1,0,0)';
+                    skewDetail.innerHTML = '目前属性值为：' + valTransform;
+                    $css3Transform(eleBox, valTransform);
+                });
+            }
+        }
+
+
+        if (rotateDetail && eleRotate && eleBox) {
+            eleRotate.addEventListener("change", function() {
+                var maxVal = this.getAttribute("max"), minVal = this.getAttribute("min"), value = this.value;
+                if (value < minVal) {
+                    value = minVal;
+                    this.value = minVal;
+                }
+                if (value > maxVal) {
+                    value = maxVal;
+                    this.value = maxVal;
+                }
+                var cosVal = Math.cos(this.value * Math.PI / 180), sinVal = Math.sin(this.value * Math.PI / 180);
+                var valTransform = 'matrix('+ cosVal.toFixed(6) +','+ sinVal.toFixed(6) +','+ (-1 * sinVal).toFixed(6) +','+ cosVal.toFixed(6) +',0,0)'
+                rotateDetail.innerHTML = '目前属性值为：' + valTransform;
+                $css3Transform(eleBox, valTransform);
+            });
+        }
+
+        if (eleDetail && eleInput && eleImage) {
+            eleInput.addEventListener("change", function() {
+                var value = parseInt(this.value, 10);
+                if (value) {
+                    $css3Transform(eleLine, "rotate("+ value +"deg)");
+                    // 确认对称线
+                    var k = Math.tan( -1 * value * Math.PI / 180),
+                        ux = 1 / Math.sqrt(1 + k * k), uy = k / Math.sqrt(1 + k * k);
+
+                    if (k > 1000000) {
+                        ux = 0, uy = 1;
+                    } else if (k < -1000000) {
+                        ux = 0, uy = -1;
+                    }
+
+                    var valTransform = "matrix("+ (2*ux*ux-1).toFixed(6) +","+ (2*ux*uy).toFixed(6) +","+ (2*ux*uy).toFixed(6) +","+ (2*uy*uy-1).toFixed(6) +",0,0)";
+                    eleDetail.innerHTML = '目前属性值为：' + valTransform;
+                    $css3Transform(eleImage, valTransform);
+                } else {
+                    this.value = "";
+                }
+            });
+        }
+
+    </script>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>属性</th>
+                <th>描述</th>
+                <th>用法</th>
+                <th>CSS</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>transform</td>
+                <td>向元素应用 2D 或 3D 转换。</td>
+                <td>transform: none|transform-functions;</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>transform-origin</td>
+                <td>允许你改变被转换元素的位置。</td>
+                <td>transform-origin: x-axis y-axis z-axis;</td>
+                <td>3</td>
+            </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead><tr>
+                <th>值</th>
+                <th>描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>x-axis</td>
+                <td>
+                    <p>定义视图被置于 X 轴的何处。可能的值：</p>
+                    <ul>
+                        <li>left</li>
+                        <li>center</li>
+                        <li>right</li>
+                        <li><i>length</i></li>
+                        <li><i>%</i></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>y-axis</td>
+                <td>
+                    <p>定义视图被置于 Y 轴的何处。可能的值：</p>
+                    <ul>
+                        <li>top</li>
+                        <li>center</li>
+                        <li>bottom</li>
+                        <li><i>length</i></li>
+                        <li><i>%</i></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>z-axis</td>
+                <td>
+                    <p>定义视图被置于 Z 轴的何处。可能的值：</p>
+                    <ul>
+                        <li><i>length</i></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody></table>
+    </div>
+    <h1>CSS3 3D 转换</h1>
+    <div>
+        <ol>
+            <li>rotateX() <span>元素围绕其 X 轴以给定的度数进行旋转。</span></li>
+            <li>rotateY() <span>元素围绕其 Y 轴以给定的度数进行旋转。</span></li>
+        </ol>
+    </div>
+    <div><table>
+        <thead><tr>
+            <th style="width:25%;">属性</th>
+            <th>描述</th>
+            <th style="width:5%;">CSS</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+            <td>transform</td>
+            <td>向元素应用 2D 或 3D 转换。</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>transform-origin</td>
+            <td>允许你改变被转换元素的位置。</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>transform-style</td>
+            <td><p>规定被嵌套元素如何在 3D 空间中显示。</p>
+                <ul>
+                    <li>flat  子元素将不保留其 3D 位置。</li>
+                    <li>preserve-3d  子元素将保留其 3D 位置。</li>
+                </ul></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>perspective</td>
+            <td>规定 3D 元素的透视效果。</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>perspective-origin</td>
+            <td>规定 3D 元素的底部位置。</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>backface-visibility</td>
+            <td>定义元素在不面对屏幕时是否可见。</td>
+            <td>3</td>
+        </tr>
+        </tbody></table></div>
+<h1>CSS3 过渡</h1>
+    <div><img src="imgs/css3/10.jpg"/></div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>属性</th>
+                <th>用法</th>
+                <th>描述</th>
+                <th>css</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>transition</td>
+                <td>transition: property duration timing-function delay;</td>
+                <td><p>简写属性，用于在一个属性中设置四个过渡属性。</p>
+                    <ul>
+                        <li>transition-property <span>规定设置过渡效果的 CSS 属性的名称。</span>
+                        <p></p></li>
+                        <li>transition-duration <span>规定完成过渡效果需要多少秒或毫秒。默认值是 0，意味着不会有效果。</span>
+                            </li>
+                        <li>transition-timing-function <span>规定速度效果的速度曲线</span>
+                        <li>transition-delay <span>规定在过渡效果开始之前需要等待的时间，以秒或毫秒计。</span></li>
+                    </ul></td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>transition-property</td>
+                <td>transition-property: none|all|property</td>
+                <td>规定应用过渡的 CSS 属性的名称。(定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔。);</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>transition-duration</td>
+                <td>transition-duration: time;</td>
+                <td>定义过渡效果花费的时间。默认是 0。</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>transition-timing-function</td>
+                <td>transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-
+                    bezier(n,n,n,n);</td>
+                <td>规定过渡效果的时间曲线。默认是 "ease"。<ul>
+                    <li>linear 规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</li>
+                    <li>ease 规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）</li>
+                    <li>ease-in 规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</li>
+                    <li>ease-out 规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</li>
+                    <li>ease-in-out 规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</li>
+                    <li>cubic-bezier(n,n,n,n) 在 cubic-bezier(贝赛尔曲线) 函数中定义自己的值。可能的值是 0 至 1 之间的数值。</li>
+                </ul></td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>transition-delay</td>
+                <td>transition-delay: time;</td>
+                <td>规定在过渡效果开始之前需要等待的时间，以秒或毫秒计。</td>
+                <td>3</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<div class="exm">
+    <div class="animated_div">css3 过渡</div>
+</div>
+<div style="display: none">http://www.w3school.com.cn/css3/css3_animation.asp</div>
+    
+</div>
+</body>
+</html>
