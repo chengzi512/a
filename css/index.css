@@ -1,3 +1,7 @@
+.hide {
+  display: none;
+  opacity: 0;
+}
 img {
   max-width: 100px;
   transition: 2s ease;
@@ -285,4 +289,31 @@ h3 span {
   width: 90px;
   height: 60px;
   font-size: 16px;
+}
+.css3 .column {
+  -moz-column-count: 3;
+  /* Firefox */
+  -webkit-column-count: 3;
+  /* Safari 和 Chrome */
+  column-count: 3;
+  -moz-column-gap: 40px;
+  /* Firefox */
+  -webkit-column-gap: 40px;
+  /* Safari 和 Chrome */
+  column-gap: 40px;
+  -moz-column-rule: 3px outset #ff00ff;
+  /* Firefox */
+  -webkit-column-rule: 3px outset #ff00ff;
+  /* Safari 和 Chrome */
+  column-rule: 3px outset #ff00ff;
+  columns: 100px 3;
+  -moz-columns: 100px 3;
+  /* Firefox */
+  -webkit-columns: 100px 3;
+  /* Safari 和 Chrome */
+}
+.css3 table.user_interface .appearance .button {
+  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
 }
