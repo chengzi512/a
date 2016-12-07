@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63d40b98-1bd1-48bd-92cf-a878b901d289" name="默认的" comment="默认的">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/demo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web.config" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server-compiled.js" afterPath="$PROJECT_DIR$/server-compiled.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,6 +34,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="chengzi &lt;843454000@qq.com&gt;" />
+      </list>
+    </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -218,12 +214,20 @@
       <workItem from="1480688056839" duration="13653000" />
       <workItem from="1480835581458" duration="15161000" />
       <workItem from="1481116848748" duration="794000" />
-      <workItem from="1481119350610" duration="328000" />
+      <workItem from="1481119350610" duration="508000" />
     </task>
+    <task id="LOCAL-00001" summary="默认的">
+      <created>1481119731098</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481119731098</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38775000" />
+    <option name="totallyTimeSpent" value="38955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -259,6 +263,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
