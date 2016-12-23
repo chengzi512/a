@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用CSS样式打印</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="assets/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<div class="noprint hide">
+    <p>（1）thead标记</p>
+    <p>thead用于设置表格的表头。</p>
+    <p>（2）tfoot标记</p>
+    <p>tfoot用于设置表格的表尾。</p>
+    <p>（3）page-break-after属性</p>
+    <p>page-break-after属性在打印文档时发生作用，用于进行分页打印。但是对于br和hr对象不起作用。</p>
+    <p>语法：</p>
+    <p>page-break-after：auto | always | avoid | left | right | null</p>
+    <p>参数说明</p>
+
+    <div>
+        <ol>
+            <li> page-break：打印时在样式控制的对象前后换页。</li>
+            <li>after：设置对象后出现页分割符。设置为always时，始终在对象之后插入页分割符。</li>
+            <li> auto：在对象之后自动插入页分割符。</li>
+            <li>always：始终在对象之后插入页分割符。</li>
+            <li>avoid：未支持。避免在对象后面插入分割符。</li>
+            <li> left：未支持。在对象后面插入页分割符，直到它到达一个空白的左页边。</li>
+            <li>right：未支持。在对象后面插入页分割符，直到它到达一个空白的右页边。</li>
+            <li> null：空白字符串。取消了分割符设置。</li>
+        </ol></div>
+    <h1>实现过程</h1>
+    <h2>（1）在要打印的页面中添加用于显示客户信息的表格，并设置好表头、表尾及打印分页，关键代码如下：</h2>
+</div>
+
+<input type="button" class="noprint" value="打印" onclick="print()">
+<input type="button" class="noprint" value="打印指定内容" onclick="printdiv('printDiv')">
+<div class="toprint">
+    <table width="650" border="1" cellpadding="0" align="center" cellspacing="0"
+
+           bgcolor="#FE7529" id="pay" bordercolor="#FE7529" bordercolordark="#FE7529"
+
+           bordercolorlight="#FFFFFF" style="border-bottom-style:none;">
+        <!--设置表头-->
+    <thead style="display:table-header-group;font-weight:bold">
+    <tr align="center" bgcolor="#FE7529">
+
+        <td width="155" height="30">客户名称</td>
+
+        <td width="99">电话</td>
+
+        <td width="59" >联系人</td>
+
+        <td width="84">联系人电话</td>
+
+        <td width="175">E-mail</td>
+
+        <td width="64">所在地区</td>
+
+    </tr>
+    </thead>
+    <tr>
+
+        <td height="30" bgcolor="#FFFFFF">采虹**集团</td>
+
+        <td width="99">电话</td>
+
+        <td width="59" >联系人</td>
+
+        <td width="84">联系人电话</td>
+
+        <td width="175">E-mail</td>
+
+        <td width="64">所在地区</td>
+
+    </tr>
+
+    <tr>
+
+        <td height="30" bgcolor="#FFFFFF">吉林省明日科技有限公司</td>
+
+        <td>……         //此处省略了显示客户其他信息的HTML代码</td>
+
+    </tr>
+    <!--控制分页-->
+    <tr style="page-break-after:always">
+    <td height="30" bgcolor="#FFFFFF">鑫***有限公司</td>
+    </tr>
+    <tr style="page-break-before:always">
+
+        <td height="30" bgcolor="#FFFFFF">东西南北***通讯公司</td>
+    </tr>
+
+    <tr>
+
+        <td height="30" bgcolor="#FFFFFF">明*有限责任公司</td>
+    </tr>
+
+    <!--设置表尾-->
+
+    <tfoot style="display:table-footer-group; border:none;"><tr><td></td></tr></tfoot>
+
+    </table>
+<div id="printDiv">
+    <table width="100%" border="0">
+        <thead style="display:table-header-group;font-weight:bold">
+    <tr><td colspan="5"  align="center" >ajava.org书城订单明细</td></tr>
+    <tr>
+        <td>书名</td>
+        <td>价格</td>
+        <td>送货地址</td>
+        <td>送货时间</td>
+        <td>状态</td>
+    </tr>
+    </thead>
+        <tr>
+            <td><img src="imgs/print/1.png" height="36" width="1350"/></td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr class='paging'>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr >
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td>伊拉克巴格达总统府9栋8单元7门654室</td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tr>
+            <td>《java 编程思想》</td>
+            <td>￥60.00</td>
+            <td><b>伊拉克巴格达总统府9栋8单元7门654室</b></td>
+            <td>2009-8-8</td>
+            <td>已送达</td>
+        </tr>
+        <tfoot style="display:table-footer-group;font-weight:bold">
+        <tr>
+            <td colspan="5"  align="left" >以上内容纯属虚构</td>
+        </tr>
+        </tfoot>
+    </table></div>
+</div>
+<div>
+    <input type="button" id="btnPrint" value="打印">
+    <div id="printContent">要打印的内容区域</div>
+    </div>
+</body>
+</html>
+<style>
+
+    @media print{
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .btn{
+            display:none;
+        }
+        .noprint{display:none}
+        .toolbar{display:none;}
+        .paging{page-break-after :always}
+        td{font-size:12px;color:#000000;}
+
+    }
+
+</style>
+<script type="application/javascript">
+    function printdiv(printDiv)
+    {
+        var headstr = "<html><head><title></title></head><body>";
+        var footstr = "</body></html>";
+        var printData = document.getElementById(printDiv).innerHTML; //获得 div 里的所有 html 数据
+        debugger;
+        var oldstr = document.body.innerHTML;
+        document.body.innerHTML = headstr+printData+footstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+        return false;
+    }
+    (function ($) {
+        var printAreaCount = 0;
+        $.fn.printArea = function () {
+            var ele = $(this);
+            var idPrefix = "printArea_";
+            removePrintArea(idPrefix + printAreaCount);
+            printAreaCount++;
+            var iframeId = idPrefix + printAreaCount;
+            var iframeStyle = 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;';
+            iframe = document.createElement('IFRAME');
+            $(iframe).attr({
+                style: iframeStyle,
+                id: iframeId
+            });
+            document.body.appendChild(iframe);
+            var doc = iframe.contentWindow.document;
+            $(document).find("link").filter(function () {
+                return $(this).attr("rel").toLowerCase() == "stylesheet";
+            }).each(
+                function () {
+                    doc.write('<link type="text/css" rel="stylesheet" href="'
+                        + $(this).attr("href") + '" >');
+                });
+            doc.write('<div class="' + $(ele).attr("class") + '">' + $(ele).html()
+                + '</div>');
+            doc.close();
+            var frameWindow = iframe.contentWindow;
+            frameWindow.close();
+            frameWindow.focus();
+            frameWindow.print();
+        }
+        var removePrintArea = function (id) {
+            $("iframe#" + id).remove();
+        };
+    })(jQuery);
+    $("#btnPrint").click(function(){ $("#printContent").printArea(); });
+
+</script>

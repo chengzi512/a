@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="layout" content="main">
+    <title>html5 实现动态网页截屏</title>
+    <script src="assets/jquery/dist/jquery.js"></script>
+    <script src="assets/html2canvas/dist/html2canvas.js"></script>
+</head>
+<body>
+<div>html2canvas通过获取页面的DOM和元素的样式信息，并将其渲染成canvas图片，从而实现给页面截图的功能。
+    因为每个浏览器渲染页面的方式都不尽相同，所以生成的图片也不太一样。</div>
+<div>环境要求: jQuery
+    兼容性: Firefox 3.5+, Chrome, Opera, IE9</div>
+<div> Hello!
+    <div class="" style="background-color: #abc;" id='myPrint'>
+        计算机天堂测试html5页面截图
+        <br>jsjtt.com
+    </div>
+
+    <textArea id="textArea" col="20" rows="10" ></textArea>
+    dddddd
+    <a href="javascript:void(0)" onclick="printById()">打印</a>
+    生成界面如下：    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function printById(id) {
+        html2canvas($('#myPrint'), {
+            allowTaint : true,
+            taintTest : false,
+            onrendered : function(canvas) {
+                canvas.id = "mycanvas";
+                document.body.appendChild(canvas);
+                //生成base64图片数据
+                var dataUrl = canvas.toDataURL();
+                var newImg = document.createElement("img");
+                newImg.src = dataUrl;
+                /* document.body.appendChild(newImg);  */
+                /* window.open(newImg.src); */
+//                var printWindow = window.open(newImg.src);
+//                printWindow.document.write('<img src="'+newImg.src+'" />')
+//                printWindow.print();
+            }
+        });
+    }
+</script>
